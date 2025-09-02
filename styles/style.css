@@ -99,16 +99,16 @@ body {
 
 .card li > a:hover {
  
-  background-color: hsl(72, 95%, 39%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(148, 220, 24) 0px 7px 29px 0px;
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--green) 0px 7px 29px 0px;
 }
 
 .card li > a:active {
   
-  background-color: hsl(66, 80%, 46%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(96, 220, 24) 0px 0px 0px 0px;
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--green) 0px 7px 29px 0px;
   transform: translateY(10px);
   transition: 100ms;
 }
