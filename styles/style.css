@@ -4,8 +4,18 @@
   box-sizing: border-box;
 }
 
+/* .card:hover {
+  transform: rotate3d(1, 1, 0, -40deg);
+  transition: ease-in-out 1.5s;
+} */
 
-/* kleuren */
+.card:hover img {
+  transform: rotateZ(360deg);
+  transform: rotate3d(1, 1, 0, 360deg);
+  transition: ease-in-out 2.5s;
+  
+}
+
 :root {
   --green: hsl(75, 94%, 57%);
   --white: hsl(0, 0%, 100%);
@@ -26,6 +36,13 @@ body {
 }
 
 .card {
+  background-color: var(--dark-grey);
+  border: 10px (var(--green));
+  border-style: solid;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.card:hover{
   background-color: var(--dark-grey);
   border: 10px (var(--green));
   border-style: solid;
@@ -78,10 +95,22 @@ body {
   font-weight: 700;
 }
 
-.card li > a:hover,
-.card li > a:focus {
-  background-color: var(--green);
-  color: var(--off-black);
+
+
+.card li > a:hover {
+ 
+  background-color: hsl(72, 95%, 39%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(148, 220, 24) 0px 7px 29px 0px;
+}
+
+.card li > a:active {
+  
+  background-color: hsl(66, 80%, 46%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(96, 220, 24) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
 }
 
 @media screen and (min-width: 768px) {
