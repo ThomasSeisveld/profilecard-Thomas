@@ -30,11 +30,19 @@ body {
 
 .card {
   background-color: var(--dark-grey);
-  border: 10px (var(--green));
-  border-style: solid;
+  border: 10px solid var(--green);
   border-radius: 1rem;
   padding: 2rem;
+  max-width: 90%;
+  width: 100%;
+  transition: max-width 0.6s ease;
+  margin: 0 auto;
 }
+
+.card.expanded {
+  max-width: 768px;
+}
+
 .card:hover{
   background-color: var(--dark-grey);
   border: 10px (var(--green));
@@ -106,6 +114,43 @@ body {
 
 .card li > a:active {
   
+  background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--green) 0px 7px 29px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+.card__extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 1rem;
+  color: var(--green);
+}
+
+.card__extra.open {
+  max-height: 300px; /* of auto als je JS gebruikt om hoogte te bepalen */
+  padding: 1rem;
+}
+
+#toggleButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: var(--green);
+  color: var(--off-black);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggleButton:hover {
+   background-color: var(--green);
+  color: var(--white);
+  box-shadow: var(--green) 0px 7px 29px 0px;
+}
+#toggleButton:active {
   background-color: var(--green);
   color: var(--white);
   box-shadow: var(--green) 0px 7px 29px 0px;
