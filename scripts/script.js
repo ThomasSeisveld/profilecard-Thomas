@@ -1,9 +1,14 @@
-// /* Stap 1: Selecteer de knop */
-// let expandButton = document.querySelector('.profile-card-example-button')
+const toggleButton = document.getElementById("toggleButton");
+const extraInfo = document.getElementById("extraInfo");
+const card = document.getElementById("card");
 
-// /* Stap 2: Wacht tot iemand op die knop klikt */
-// expandButton?.addEventListener('click', function() {
+toggleButton.addEventListener("click", () => {
+    extraInfo.classList.toggle("open");
+    card.classList.toggle("expanded");
 
-//   /* Stap 3: Verander een class zodra iemand op die knop klikt */
-//   document.body.classList.toggle('is-expanded')
-// })
+    toggleButton.textContent = extraInfo.classList.contains("open")
+      ? "Minder informatie"
+      : "Meer informatie";
+  });
+
+
