@@ -30,7 +30,9 @@ body {
 
 .card {
   background-color: var(--dark-grey);
-  border: 10px solid var(--green);
+  border: 3px;
+  border-color: var(--green);
+  border-style: solid;
   border-radius: 1rem;
   padding: 2rem;
   max-width: 90%;
@@ -44,11 +46,7 @@ body {
 }
 
 .card:hover{
-  background-color: var(--dark-grey);
-  border: 10px (var(--green));
-  border-style: solid;
-  border-radius: 1rem;
-  padding: 2rem;
+
 }
 
 .card__image img {
