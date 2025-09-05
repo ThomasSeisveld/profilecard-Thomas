@@ -9,34 +9,40 @@
   <body>
     <body>
       <main>
-        <div class="card">
-          <div class="front">
-            <div class="card__header">
-              <div class="card__image">
-                <img src="assets/Media.png" alt="avatar" />
-            </div>
-
-            <div class="card__details">
-              <h1>Thomas Seisveld</h1>
-              <p>Frontend student HVA</p>
-            </div>
-            <p class="card__quote">Full stack developer</p>
-          </div>
-          <div class="card__body">
-            <ul>
-
-              <li><a href="https://github.com/ThomasSeisveld"> GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/thomas-seisveld-891a05330/"> LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/thomas_seisveld?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
-
-            </ul>
-            <button id="toggleButton">Meer informatie</button>
+        <div class="card" id="card">
+          <div class="card__inner">
+           <div class="card__face card__face--front">
+             <div class="card__header">
+             <div class="card__image">
+          <img src="assets/Media.png" alt="avatar" />
+        </div>
+        <div class="card__details">
+          <h1>Thomas Seisveld</h1>
+          <p>Frontend student HVA</p>
+        </div>
+        <p class="card__quote">Full stack developer</p>
       </div>
-          <!-- <div class="back">
-              <button id="toggleButton">Meer informatie</button>
-                <p>Hallo! Mijn naam is Thomas Seisveld, ik ben 20 jaar oud en ik woon in Amsterdam. Momenteel ben ik een derdejaars student aan de Hogeschool van Amsterdam, waar ik Frontend Development studeer. Mijn passie ligt bij het creëren van boeiende en gebruiksvriendelijke webinterfaces. Ik ben altijd op zoek naar nieuwe uitdagingen en kansen om mijn vaardigheden verder te ontwikkelen. Naast mijn studie ben ik ook actief bezig met persoonlijke projecten en blijf ik op de hoogte van de nieuwste trends in webontwikkeling. Ik kijk ernaar uit om mijn kennis en ervaring in te zetten in een professionele omgeving en bij te dragen aan innovatieve projecten.</p>
-            </div> -->
-         </div> 
+      <div class="card__body">
+        <ul>
+          <li><a href="https://github.com/ThomasSeisveld">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/thomas-seisveld-891a05330/">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/thomas_seisveld">Instagram</a></li>
+        </ul>
+        <button id="toggleButton">Meer informatie</button>
+      </div>
+    </div>
+
+    <div class="card__face card__face--back">
+      <div class="card__body">
+              <p>
+               Hallo! Mijn naam is Thomas Seisveld, ik ben 19 jaar oud en ik woon in Leiden.
+                 Ik ben moment aan de Hogeschool van Amsterdam, waar ik Frontend Development studeer.
+                    Mijn passie ligt bij het creëren van boeiende en gebruiksvriendelijke webinterfaces.
+              </p>
+              <button id="backButton">Terug</button>
+            </div>        
+          </div>
+          </div>
         </div>
       </main>
 <script src="scripts/script.js"></script>

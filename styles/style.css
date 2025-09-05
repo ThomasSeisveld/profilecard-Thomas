@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-/* .card:hover {
-  transform: rotate3d(1, 1, 0, -40deg);
-  transition: ease-in-out 1.5s;
-} */
-
 :root {
   --green: hsl(75, 94%, 57%);
   --white: hsl(0, 0%, 100%);
@@ -29,30 +24,50 @@ body {
 }
 
 .card {
-  background-color: var(--dark-grey);
-  border: 3px;
-  border-color: var(--green);
-  border-style: solid;
-  border-radius: 1rem;
-  perspective: 37.5em;
-  padding: 2rem;
-  max-width: 320px;
-  width: 100%;
-  transition: max-width 0.6s ease;
-  transform-style: preserve-3d;
+  width: 320px;
+  height: 480px;
+  perspective: 1000px;
   margin: 0 auto;
-}
-
-.card.expanded {
-  max-width: 768px;
-}
-
-.card:hover{
-  border: 3px;
-  border-color: var(--white);
-  border-style: solid;
+  position: relative;
+  transition: border-color 1s;
+  border: 3px solid var(--green);
   border-radius: 1rem;
-  transition: 1s;
+}
+
+.card:hover {
+  border-color: var(--white);
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--dark-grey);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
 }
 
 .card__image img {
@@ -62,11 +77,6 @@ body {
   border-radius: 50%;
   width: 7rem;
   height: 7rem;
-}
-
-.card:hover li > a {
-  box-shadow: 0 0 16px 4px var(--green);
-  transition: box-shadow 0.5s ease;
 }
 
 .card .card__details {
@@ -87,9 +97,11 @@ body {
 .card .card__quote {
   padding: 0.5rem;
 }
+
 .card ul {
   list-style: none;
 }
+
 .card li {
   margin-top: 1rem;
 }
@@ -108,34 +120,21 @@ body {
 }
 
 .card li > a:hover {
- 
   background-color: var(--green);
   color: var(--white);
   box-shadow: var(--green) 0px 7px 29px 0px;
 }
 
 .card li > a:active {
-  
   background-color: var(--green);
   color: var(--white);
   box-shadow: var(--green) 0px 7px 29px 0px;
   transform: translateY(10px);
   transition: 100ms;
 }
-.card__extra {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-  padding: 0 1rem;
-  color: var(--green);
-}
 
-.card__extra.open {
-  max-height: 300px; 
-  padding: 1rem;
-}
-
-#toggleButton {
+#toggleButton,
+#backButton {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
   border: none;
@@ -147,12 +146,15 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#toggleButton:hover {
-   background-color: var(--green);
+#toggleButton:hover,
+#backButton:hover {
+  background-color: var(--green);
   color: var(--white);
   box-shadow: var(--green) 0px 7px 29px 0px;
 }
-#toggleButton:active {
+
+#toggleButton:active,
+#backButton:active {
   background-color: var(--green);
   color: var(--white);
   box-shadow: var(--green) 0px 7px 29px 0px;
